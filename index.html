@@ -658,12 +658,85 @@
             <p>🦜 Taking care of his birds</p>
         </div>
 
-        <div class="donation">
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Birthday Countdown</title>
+            <style>
+                body {
+                    background-color: #1e1e1e;
+                    color: #e0e0e0;
+                    font-family: 'Poppins', sans-serif;
+                    text-align: center;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                .countdown-container {
+                    background-color: #1e1e1e;
+                    color: #ff5252;
+                    padding: 50px;
+                    border-radius: 10px;
+                    margin-top: 50px;
+                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+                }
+
+                .countdown {
+                    font-size: 3em;
+                    font-weight: bold;
+                    text-shadow: 2px 2px 10px rgba(255, 82, 82, 0.6);
+                }
+            </style>
+        </head>
+        <body>
+
+            <div class="header">
+                 Jonathan Terry Judd 21 birthday count down
+            </div>
+
+            <div class="container">
+                <div class="countdown-container">
+                    <div class="countdown" id="countdown"></div>
+                </div>
+            </div>
+
+            <script>
+                // Set the date for the next birthday (example: December 31, 2025)
+                const birthday = new Date("April  28, 2025 00:00:00").getTime();
+
+                // Update the countdown every 1 second
+                const interval = setInterval(function() {
+                    const now = new Date().getTime();
+                    const timeLeft = birthday - now;
+
+                    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                    document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+                    // If the countdown is finished, display a message
+                    if (timeLeft < 0) {
+                        clearInterval(interval);
+                        document.getElementById("countdown").innerHTML = "Happy Birthday!";
+                    }
+                }, 1000);
+            </script>
+
+        </body>
+        </html>
+
+      <div class="donation">
             <h2>Donate to help support jonathan judd's family </h2>
             <p>Your donations will help support his family at this hard time</p>
             <button onclick="window.location.href='https://www.gofundme.com/f/support-for-jonathans-family-in-tragedy?attribution_id=sl:f1de6bbe-df8f-417f-a4be-52ec196587d9&amp;utm_campaign=natman_sharesheet_dash&amp;utm_content=amp13_t1&amp;utm_medium=customer&amp;utm_source=copy_link&amp;fbclid=IwY2xjawJJFYRleHRuA2FlbQIxMQABHdXA5qpgUs5O9WCw0XGOuPYiqEr6HvRZvFE3xxFGj8oMrVyYAhGwABVqtw_aem_HjSC2ZsNI8l7AnZg-zf08g'">Donate Now</button>
         </div>
     </div>
+
+</div>
 
 
 </body></html>
