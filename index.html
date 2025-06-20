@@ -1,9 +1,54 @@
-<html lang="en"><head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>In Loving Memory of Jonathan Terry Judd</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
+    /* Overlay styles */
+    #welcome-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background-color: #121212;
+      color: #5dade2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.8rem;
+      text-align: center;
+      padding: 20px;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+    #welcome-overlay.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    #welcome-overlay button {
+      margin-top: 30px;
+      padding: 14px 40px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #5470ff, #78a0ff);
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(120, 160, 255, 0.6);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+    #welcome-overlay button:hover {
+      background: linear-gradient(135deg, #3a53d1, #5470ff);
+      box-shadow: 0 0 30px rgba(80, 110, 255, 0.9);
+    }
+
+    /* Rest of your styles */
+
     body {
       margin: 0;
       background-color: #121212;
@@ -12,12 +57,12 @@
       text-align: center;
     }
     .header {
-      background-color: #2c3e50; /* dark blue-gray */
+      background-color: #2c3e50;
       padding: 20px;
       font-size: 2.5em;
       font-weight: bold;
       text-transform: uppercase;
-      color: #d1d9e6; /* soft light */
+      color: #d1d9e6;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
     .container {
@@ -27,7 +72,7 @@
     }
     h1 {
       font-size: 2.5em;
-      color: #5dade2; /* soft blue */
+      color: #5dade2;
       margin-bottom: 10px;
       text-shadow: 2px 2px 8px rgba(93, 173, 226, 0.5);
     }
@@ -59,7 +104,6 @@
       color: #5dade2;
       margin-bottom: 30px;
     }
-    /* His Passions uniform image sizes and layout */
     .passion-section {
       display: flex;
       align-items: center;
@@ -97,7 +141,6 @@
       font-size: 1.1rem;
       margin: 0;
     }
-    /* Countdown styles */
     .countdown-container {
       margin-top: 40px;
       padding: 40px;
@@ -116,7 +159,6 @@
       color: #5dade2;
       text-shadow: 2px 2px 10px rgba(93, 173, 226, 0.6);
     }
-    /* Donate button */
     .donation {
       background-color: #2c3e50;
       color: white;
@@ -144,7 +186,6 @@
       background: linear-gradient(135deg, #3a53d1, #5470ff);
       box-shadow: 0 0 30px rgba(80, 110, 255, 0.9);
     }
-    /* Responsive */
     @media (max-width: 768px) {
       .passion-section {
         flex-direction: column !important;
@@ -158,14 +199,19 @@
 </head>
 <body>
 
+  <div id="welcome-overlay">
+    Site made by his brother <br><strong>Anthony Logalbo</strong>
+    <button id="enter-btn" aria-label="Enter Site">Enter</button>
+  </div>
+
   <div class="header">Jonathan Terry Judd</div>
 
-  <div class="container">
+  <div class="container" id="main-content" style="display:none;">
     <h1>In Loving Memory of Jonathan Terry Judd</h1>
     <p>Born: April 28, 2004 – Passed: February 25, 2025</p>
 
     <div class="image-container">
-      <img src="IMG_3071.png" alt="Jonathan's Honda VFR750F">
+      <img src="IMG_3071.png" alt="Jonathan's Honda VFR750F" />
     </div>
 
     <div class="section" aria-label="How Jonathan Passed">
@@ -179,7 +225,7 @@
       <h2>His Passions</h2>
 
       <div class="passion-section">
-        <img src="IMG_3069.webp" alt="Playing Rainbow Six Siege">
+        <img src="IMG_3069.webp" alt="Playing Rainbow Six Siege" />
         <div class="passion-text">
           <h3>Playing Rainbow Six Siege</h3>
           <p>He loved diving into the tactical gameplay with his buddies, always strategizing and having fun.</p>
@@ -187,7 +233,7 @@
       </div>
 
       <div class="passion-section">
-        <img src="IMG_3070.png" alt="Riding his bike">
+        <img src="IMG_3070.png" alt="Riding his bike" />
         <div class="passion-text">
           <h3>Riding his bike</h3>
           <p>Nothing compared to the thrill and freedom he found riding his motorcycle.</p>
@@ -195,7 +241,7 @@
       </div>
 
       <div class="passion-section">
-        <img src="IMG_3081.jpg" alt="Working on cars">
+        <img src="IMG_3081.jpg" alt="Working on cars" />
         <div class="passion-text">
           <h3>Working on cars</h3>
           <p>He loved getting his hands dirty and tuning up vehicles with care and passion.</p>
@@ -203,7 +249,7 @@
       </div>
 
       <div class="passion-section">
-        <img src="IMG_3082.jpg" alt="Taking care of his birds">
+        <img src="IMG_3082.jpg" alt="Taking care of his birds" />
         <div class="passion-text">
           <h3>Taking care of his birds</h3>
           <p>He cherished his birds and found peace in caring for them daily.</p>
@@ -211,7 +257,10 @@
       </div>
     </section>
 
-    
+    <div class="countdown-container" aria-label="Birthday countdown">
+      <h2>Jonathan’s 21st Birthday Countdown</h2>
+      <div class="countdown" id="countdown">Loading...</div>
+    </div>
 
     <div class="donation" aria-label="Donation section">
       <h2>Support Jonathan’s Family</h2>
@@ -221,28 +270,42 @@
   </div>
 
   <script>
-    const birthday = new Date("April 28, 2025 00:00:00").getTime();
-    const countdownElement = document.getElementById("countdown");
+    document.addEventListener("DOMContentLoaded", () => {
+      // Handle welcome overlay
+      const overlay = document.getElementById('welcome-overlay');
+      const mainContent = document.getElementById('main-content');
+      const enterBtn = document.getElementById('enter-btn');
 
-    const interval = setInterval(() => {
-      const now = new Date().getTime();
-      const timeLeft = birthday - now;
+      enterBtn.addEventListener('click', () => {
+        overlay.classList.add('hidden');
+        setTimeout(() => {
+          overlay.style.display = 'none';
+          mainContent.style.display = 'block';
+        }, 600);
+      });
 
-      if (timeLeft < 0) {
-        countdownElement.innerHTML = "Happy Birthday!";
-        clearInterval(interval);
-        return;
-      }
+      // Countdown
+      const birthday = new Date("April 28, 2025 00:00:00").getTime();
+      const countdownElement = document.getElementById("countdown");
 
-      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+      const interval = setInterval(() => {
+        const now = new Date().getTime();
+        const timeLeft = birthday - now;
 
-      countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-    }, 1000);
+        if (timeLeft < 0) {
+          countdownElement.innerHTML = "Happy Birthday!";
+          clearInterval(interval);
+          return;
+        }
+
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+      }, 1000);
+    });
   </script>
-
-
-
-</body></html>
+</body>
+</html>
